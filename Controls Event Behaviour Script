@@ -1,0 +1,15 @@
+using UnityEngine;
+using UnityEngine.Events;
+
+public class ControlsEventBehavior : MonoBehaviour
+{
+    public UnityEvent leftMouseDown;
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            leftMouseDown.Invoke();
+        }
+    }
+}
