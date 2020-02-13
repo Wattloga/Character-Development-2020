@@ -1,0 +1,20 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyHealth : MonoBehaviour
+{
+    public void TakeDamage(float _amount, Spell.SpellType spellType)
+    {
+        if(spellType == Spell.SpellType.Ice)
+        {
+            Debug.Log("spell type is ice...we are frozen");
+        }
+    }
+
+    internal void TakeDamage(float damage, CastSpell.SpellType spellType)
+    {
+        throw new NotImplementedException();
+    }
+}
