@@ -1,0 +1,30 @@
+public class CharacterStats : MonoBehaviour
+{
+    public int maxHealth = 100;
+    public int cur_Health { get; private set; }
+
+    public Stat damage;
+
+    private void Awake()
+    {
+        cur_Health = maxHealth;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        damage = Mathf.Clamp(damage, 0, int.MaxValue);
+
+        cur_Health -= damage;
+        Debug.Log(transform.name + "takes" + damage + "damage.");
+
+        if(cur_Health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public virtual void Die()
+    {
+        Debug.Log(transform.name + "died.");
+    }
+}
